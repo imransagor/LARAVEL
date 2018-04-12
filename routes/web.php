@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+//LOGIN
+Route::get('/login', 'loginController@loginPageLoad')->name('login');
+Route::post('/home','loginController@userCheck')->name('userCheck');
+
+//Register
+Route::get('/register','registerController@registerPageLoad')->name('register');
+Route::post('/register','registerController@store')->name('registernew');
